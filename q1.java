@@ -39,22 +39,22 @@ public class q1<T> {
     public static void main(String[] args) {
         q1<Integer> stack = new q1<>();
 
-        System.out.println("Enter Stack Size: 3");
-        System.out.println("Enter Stack Values");
+        System.out.println("Stack Size: 3");
+        
         stack.push(1);
         stack.push(2);
         stack.push(3);
 
-        System.out.println("Perform Stack Operations");
+    
         System.out.println("pop");
         System.out.println("Popped: " + stack.pop());
         System.out.println("pop");
         System.out.println("Popped: " + stack.pop());
-        System.out.println("size");
+    
         System.out.println("Stack size: " + stack.size());
-        System.out.println("isEmpty");
+       
         System.out.println("Stack is " + (stack.isEmpty() ? "empty." : "not empty."));
-        System.out.println("Program Exited!");
+        
     }
 
     private static class Node<T> {
