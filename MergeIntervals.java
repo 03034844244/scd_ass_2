@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class MergeIntervals {
@@ -28,7 +29,11 @@ public class MergeIntervals {
     }
 
     public static void main(String[] args) {
-        List<int[]> intervals = List.of(new int[]{1, 3}, new int[]{2, 6}, new int[]{8, 10}, new int[]{15, 18});
+        List<int[]> intervals = new ArrayList<>();
+        intervals.add(new int[]{1, 3});
+        intervals.add(new int[]{2, 6});
+        intervals.add(new int[]{8, 10});
+        intervals.add(new int[]{15, 18});
 
         mergeIntervals(intervals);
 
