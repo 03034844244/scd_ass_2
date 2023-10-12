@@ -1,44 +1,50 @@
-import java.util.ArrayList;
 import java.util.EmptyStackException;
-import java.util.List;
 
 public class q1<T> {
-    private List<T> stack;
-    
+    private Node<T> top;
+
     public q1() {
-        stack = new ArrayList<>();
+        top = null;
     }
 
     public void push(T item) {
-        stack.add(item);
+        Node<T> newNode = new Node<>(item);
+        newNode.next = top;
+        top = newNode;
     }
 
     public T pop() {
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        int lastIndex = stack.size() - 1;
-        T poppedItem = stack.remove(lastIndex);
+        T poppedItem = top.data;
+        top = top.next;
         return poppedItem;
     }
 
     public boolean isEmpty() {
-        return stack.isEmpty();
+        return top == null;
     }
 
     public int size() {
-        return stack.size();
+        int count = 0;
+        Node<T> current = top;
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        return count;
     }
 
     public static void main(String[] args) {
-        q1<Object> stack = new q1<>();
-        
+        q1<Integer> stack = new q1<>();
+
         System.out.println("Enter Stack Size: 3");
         System.out.println("Enter Stack Values");
         stack.push(1);
         stack.push(2);
         stack.push(3);
-        
+
         System.out.println("Perform Stack Operations");
         System.out.println("pop");
         System.out.println("Popped: " + stack.pop());
@@ -49,5 +55,15 @@ public class q1<T> {
         System.out.println("isEmpty");
         System.out.println("Stack is " + (stack.isEmpty() ? "empty." : "not empty."));
         System.out.println("Program Exited!");
+    }
+
+    private static class Node<T> {
+        T data;
+        Node<T> next;
+
+        Node(T data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 }
