@@ -1,0 +1,6 @@
+Post ID: 1, Author: user1, Date: 2023-10-12 14:30:00
+This is a new post from user1.
+
+Post ID: 2, Author: user2, Date: 2023-10-12 15:45:00
+First post from user2.
+
